@@ -1,30 +1,37 @@
 class Solution {
      public String reverseVowels(String s) {
-       char ch[]=s.toCharArray();
-         //char p={'a','e','i','o','u','A','E','I','O','U'};
-         int c=0;
+       char ch[]=s.toCharArray();int c=0;
          for(int i=0;i<ch.length;i++){
-             if((ch[i]=='a')||(ch[i]=='e')||(ch[i]=='i')||(ch[i]=='o')||(ch[i]=='u')||                                                     (ch[i]=='A')||(ch[i]=='E')||(ch[i]=='I')||(ch[i]=='O')||(ch[i]=='U')){
+              if(check(ch[i])){
+             // if((ch[i]=='a')||(ch[i]=='e')||(ch[i]=='i')||(ch[i]=='o')||(ch[i]=='u')||                                                     (ch[i]=='A')||(ch[i]=='E')||(ch[i]=='I')||(ch[i]=='O')||(ch[i]=='U')){
                  c++;
              }
          }
          char cc[]= new char[c];
          int j=0;
           for(int i=0;i<ch.length;i++){
-             if((ch[i]=='a')||(ch[i]=='e')||(ch[i]=='i')||(ch[i]=='o')||(ch[i]=='u')||                                                     (ch[i]=='A')||(ch[i]=='E')||(ch[i]=='I')||(ch[i]=='O')||(ch[i]=='U')){
+               if(check(ch[i])){
+             // if((ch[i]=='a')||(ch[i]=='e')||(ch[i]=='i')||(ch[i]=='o')||(ch[i]=='u')||                                                     (ch[i]=='A')||(ch[i]=='E')||(ch[i]=='I')||(ch[i]=='O')||(ch[i]=='U')){
                  cc[j]=ch[i];
                  j++;
              }
          }
          
            for(int i=0;i<ch.length;i++){
-             if((ch[i]=='a')||(ch[i]=='e')||(ch[i]=='i')||(ch[i]=='o')||(ch[i]=='u')||                                                     (ch[i]=='A')||(ch[i]=='E')||(ch[i]=='I')||(ch[i]=='O')||(ch[i]=='U')){
+               if(check(ch[i])){
+             // if((ch[i]=='a')||(ch[i]=='e')||(ch[i]=='i')||(ch[i]=='o')||(ch[i]=='u')||                                                     (ch[i]=='A')||(ch[i]=='E')||(ch[i]=='I')||(ch[i]=='O')||(ch[i]=='U')){
                  ch[i]=cc[c-1];
                  c--;
              }
          }
         return String.valueOf(ch);
         }
+     public boolean check(char c){
+         if((c=='a')||(c=='e')||(c=='i')||(c=='o')||(c=='u')||(c=='A')||(c=='E')||(c=='I')||(c=='O')||(c=='U')){
+             return true;
+     }
+         return false;
+}
 }
 //     public String reverseVowels(String s) {
 //         char ch[]=s.toCharArray(); //{L,E,E,T,C,O,D,E}
