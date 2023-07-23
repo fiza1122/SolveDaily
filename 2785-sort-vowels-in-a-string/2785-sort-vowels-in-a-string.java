@@ -4,8 +4,7 @@ class Solution {
          String t="";
         
         for(int i=0;i<s.length();i++){
-            if((s.charAt(i)=='A')||(s.charAt(i)=='E')||(s.charAt(i)=='I')||(s.charAt(i)=='O')||(s.charAt(i)=='U')||                       (s.charAt(i)=='a')||(s.charAt(i)=='e')||(s.charAt(i)=='i')||(s.charAt(i)=='o')||(s.charAt(i)=='u')){
-                //ch(i)=s.charAt(i);
+            if((check(s.charAt(i)))){  
                 ch.add(s.charAt(i));
             }}
         
@@ -13,16 +12,19 @@ class Solution {
         int c=0;
         
            for(int i=0;i<s.length();i++){
-            if((s.charAt(i)=='A')||(s.charAt(i)=='E')||(s.charAt(i)=='I')||(s.charAt(i)=='O')||(s.charAt(i)=='U')||                       (s.charAt(i)=='a')||(s.charAt(i)=='e')||(s.charAt(i)=='i')||(s.charAt(i)=='o')||(s.charAt(i)=='u')){
-               
-                t=t+ch.get(c++);
-            }
+            if((check(s.charAt(i)))){  
+                t=t+ch.get(c++);}
            else {
                t=t+s.charAt(i);
            }}
-        
-        return t;
+          return t;
             }
+    public boolean check(char c){
+     if((c=='A')||(c=='E')||(c=='I')||(c=='O')||(c=='U')||(c=='a')||(c=='e')||(c=='i')||(c=='o')||(c=='u')){
+        return true;
+    }
+        return false;
+    }
         }
     
 // char ar[] = s.toCharArray(); 
